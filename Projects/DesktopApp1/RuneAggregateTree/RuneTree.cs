@@ -10,8 +10,8 @@ namespace RuneAggregateTree
     {
         struct Rune
         {
-            string Type; // dictates the type of Rune it is 
-            private int ID; // dictates the name and the number
+            string RType;
+            private int ID { get; set; } // dictates the name and the number
         }
 
         struct Spell
@@ -21,5 +21,16 @@ namespace RuneAggregateTree
             int SID;
             string Essence;
         }
+
+        private RuneTree (Rune runeType, Rune runeID)
+        {
+            var NewRune = new Rune();
+            // Match tree
+
+            // Branch 1
+            
+        }
+
+        
     }
 }
