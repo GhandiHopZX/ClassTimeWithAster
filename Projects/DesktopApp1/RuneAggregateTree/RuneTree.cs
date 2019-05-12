@@ -44,7 +44,7 @@ namespace RuneAggregateTree
 
             HashSet<Rune> Taygr = new HashSet<Rune>()
             {
-
+                //Rune moe = new { }; 
             };
 
             // Imported
@@ -61,7 +61,7 @@ namespace RuneAggregateTree
                 {
                     while ((im = importRune.ReadLine()) != null)
                     {
-                        Taygr.Add(im);
+                        //Taygr.Add(im);
                     }
                 }
             }
