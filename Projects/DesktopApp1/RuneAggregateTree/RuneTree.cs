@@ -25,7 +25,14 @@ namespace RuneAggregateTree
         private RuneTree (Rune runeType, Rune runeID)
         {
             var NewRune = new Rune();
+
+            // Tree Type
+
+
+
             // Match tree
+
+            var Maintree = "root";
 
             // Branch 1
             
