@@ -27,8 +27,6 @@ namespace RuneAggregateTree
         private RuneTree (Rune runeType, Rune runeID)
         {
             var NewRune = new Rune();
-            
-            
 
 
             // Tree Type
@@ -41,14 +39,9 @@ namespace RuneAggregateTree
 
             // Branch 1: Taygr(Ability) - Vessel Hierarchy Magick
             // This branch handles - stat buffs and ability buffs
-
-            HashSet<Rune> Taygr = new HashSet<Rune>()
-            {
-                //Rune moe = new { }; 
-            };
-
-            // Imported
-            HashSet<Rune> NewRunesTy = new HashSet<Rune>();
+            
+            // Imported -> from file to strings
+            HashSet<string> NewRunesTy = new HashSet<string>();
 
             string path = @"G:\RyuuseiEngine\Assets\Mods\TaygrRunes.txt";
 
@@ -61,11 +54,31 @@ namespace RuneAggregateTree
                 {
                     while ((im = importRune.ReadLine()) != null)
                     {
-                        //Taygr.Add(im);
+                        NewRunesTy.Add(im);
                     }
                 }
             }
 
+            // Addendum -> from strings to Runes
+            HashSet<Rune> Taygr = new HashSet<Rune>()
+            {
+
+            };
+
+            do
+            {
+                var StrN = new Rune();
+
+                //StrN += NewRunesTy; this is the goal 
+                NewRunesTy ;
+
+                break;
+
+            } while (true);
+            {
+            }
+
+            
 
             // Branch 2: Volmir(Offensive) - Soul Hierarchy Magick
             // This branch handles - Projectile attacks and AOE attacks
