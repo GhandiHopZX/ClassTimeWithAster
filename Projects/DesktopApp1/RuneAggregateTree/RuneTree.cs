@@ -10,17 +10,17 @@ namespace RuneAggregateTree
     public class RuneTree
     {
 
-        struct Rune
+        public struct Rune
         {
-            string RType;
+            public string RType;
             private int ID { get; set; } // dictates the name and the number
         }
 
-        struct Spell
+        public struct Spell
         {
             string RType;
             string RClass;
-            int SID;
+            private int SID;
             string Essence;
         }
 
@@ -30,8 +30,6 @@ namespace RuneAggregateTree
 
 
             // Tree Type
-
-
 
             // Match tree
 
@@ -65,18 +63,26 @@ namespace RuneAggregateTree
 
             };
 
-            do
-            {
+            //do
+            //{
                 var StrN = new Rune();
+                int FR = NewRunesTy.Count;
+                string[] newRName = { };
+
+                NewRunesTy.CopyTo(newRName);
+                for (int i = 0; i < FR; i++)
+                {
+                    
+                }
 
                 //StrN += NewRunesTy; this is the goal 
-                NewRunesTy ;
+                //NewRunesTy ;
 
-                break;
+            //    break;
 
-            } while (true);
-            {
-            }
+            //} while (NewRunesTy.Count > 0);
+            //{
+            //}
 
             
 
@@ -91,6 +97,6 @@ namespace RuneAggregateTree
 
         }
 
-
+        
     }
 }
