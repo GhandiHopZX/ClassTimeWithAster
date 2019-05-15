@@ -78,5 +78,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RuneAggregateTree\RuneAggregateTree.csproj">
+      <Project>{50eab2b2-a3af-435f-af8f-7e4f65189c4c}</Project>
+      <Name>RuneAggregateTree</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
