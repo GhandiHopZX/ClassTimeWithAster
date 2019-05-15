@@ -24,67 +24,15 @@ namespace RuneAggregateTree
             string Essence;
         }
 
-        private RuneTree (Rune runeType, Rune runeID)
+        private RuneTree(Rune runeType, Rune runeID)
         {
-            var NewRune = new Rune();
-
-
-            // Tree Type
-
-            // Match tree
-
-            var Maintree = "root";
-
             // Branch 1: Taygr(Ability) - Vessel Hierarchy Magick
             // This branch handles - stat buffs and ability buffs
-            
-            // Imported -> from file to strings
-            HashSet<string> NewRunesTy = new HashSet<string>();
-
-            string path = @"G:\RyuuseiEngine\Assets\Mods\TaygrRunes.txt";
-
-            if (!File.Exists(path))
-            {
-                string im;
-                StreamReader importRune;
-
-                using (importRune = File.OpenText(path))
-                {
-                    while ((im = importRune.ReadLine()) != null)
-                    {
-                        NewRunesTy.Add(im);
-                    }
-                }
-            }
-
             // Addendum -> from strings to Runes
             HashSet<Rune> Taygr = new HashSet<Rune>()
             {
 
             };
-
-            //do
-            //{
-                var StrN = new Rune();
-                int FR = NewRunesTy.Count;
-                string[] newRName = { };
-
-                NewRunesTy.CopyTo(newRName);
-                for (int i = 0; i < FR; i++)
-                {
-                    
-                }
-
-                //StrN += NewRunesTy; this is the goal 
-                //NewRunesTy ;
-
-            //    break;
-
-            //} while (NewRunesTy.Count > 0);
-            //{
-            //}
-
-            
 
             // Branch 2: Volmir(Offensive) - Soul Hierarchy Magick
             // This branch handles - Projectile attacks and AOE attacks
@@ -95,8 +43,13 @@ namespace RuneAggregateTree
             // Branch 4: Devina(Creation) - God Hierarchy Magick
             // This branch handles - Instatiation and Alteration
 
+
+            // Match tree
+
+            var Maintree = "root";
         }
 
-        
+
     }
 }
+
