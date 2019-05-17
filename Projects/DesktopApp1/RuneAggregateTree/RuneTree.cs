@@ -13,7 +13,7 @@ namespace RuneAggregateTree
         public struct Rune
         {
             public string RType;
-            private int ID { get; set; } // dictates the name and the number
+            public int ID { get; set; } // dictates the name and the number
         }
 
         public struct Spell
@@ -29,10 +29,7 @@ namespace RuneAggregateTree
             // Branch 1: Taygr(Ability) - Vessel Hierarchy Magick
             // This branch handles - stat buffs and ability buffs
             // Addendum -> from strings to Runes
-            HashSet<Rune> Taygr = new HashSet<Rune>()
-            {
-
-            };
+            
 
             // Branch 2: Volmir(Offensive) - Soul Hierarchy Magick
             // This branch handles - Projectile attacks and AOE attacks

@@ -43,11 +43,18 @@ namespace RuneAggregateTree
 
             // reference Taygr hash here
 
+            HashSet<Rune> Taygr = new HashSet<Rune>()
+            {
+
+            };
+
             //do
             //{
+
             var StrN = new Rune();
             int FR = NewRunesTy.Count;
             string[] newRName = { };
+            int[] NewRId = { };
 
             NewRunesTy.CopyTo(newRName);
 
@@ -55,8 +62,15 @@ namespace RuneAggregateTree
             {
                 // push the new rune names into whole new 
                 // Runes themselves
-                
+                StrN.RType = newRName[i];
+                StrN.ID = NewRId[i];
+
+                Rune m = new Rune {RType = newRName[i], ID = NewRId[i]};
+
+                Taygr.Add(m);
             }
+
+            
 
             //StrN += NewRunesTy; this is the goal 
             //NewRunesTy ;
