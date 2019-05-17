@@ -70,17 +70,7 @@ namespace RuneAggregateTree
                 Taygr.Add(m);
             }
 
-            
-
-            //StrN += NewRunesTy; this is the goal 
-            //NewRunesTy ;
-
-            //    break;
-
-            //} while (NewRunesTy.Count > 0);
-            //{
-            //}
-            return ; // Return the strings here to the "RuneTree" Aggregate
+            return; // Return the strings here to the "RuneTree" Aggregate
         }
     }
 }
