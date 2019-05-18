@@ -10,21 +10,14 @@ namespace RuneAggregateTree
 {
     class FileandModinSystem
     {
-        // object Rune = new RuneAggregateTree.RuneTree.Rune();
-        //Taygr
 
-        private void RuneImport()
+        // importing the sets
+        public HashSet<string> Importfunction(string path)
         {
-            var NewRune = new Rune();
-
-            // Tree Type
-
-
-            // Imported -> from file to strings
+            // string hash
             HashSet<string> NewRunesTy = new HashSet<string>();
 
-            string path = @"G:\RyuuseiEngine\Assets\Mods\TaygrRunes.txt";
-
+            // if statement
             if (!File.Exists(path))
             {
                 string im;
@@ -38,6 +31,31 @@ namespace RuneAggregateTree
                     }
                 }
             }
+            return NewRunesTy;
+        }
+
+        // object Rune = new RuneAggregateTree.RuneTree.Rune();
+        //Taygr
+
+        private void RuneImport()
+        {
+            var NewRune = new Rune();
+
+            // Tree Type
+
+            // You need another file path for the Rune Names
+
+            /// This is for the rune type
+            string path = @"G:\RyuuseiEngine\Assets\Mods\TaygrRuneTypes.txt";
+           
+            /// This is for the rune name
+            string path2 = @"G:\RyuuseiEngine\Assets\Mods\TaygrRuneNames.txt";
+
+            //// the rune types
+            //Importfunction(path);
+
+            //// the rune names
+            //Importfunction(path2);
 
             // Addendum -> from strings to Runes
 
@@ -52,25 +70,39 @@ namespace RuneAggregateTree
             //{
 
             var StrN = new Rune();
-            int FR = NewRunesTy.Count;
+            int FR = Importfunction(path).Count;
             string[] newRName = { };
             int[] NewRId = { };
+            string[] RN = { }; 
 
-            NewRunesTy.CopyTo(newRName);
+
+            //names
+            Importfunction(path2).CopyTo(RN);
+
+            //types
+            Importfunction(path).CopyTo(newRName);
 
             for (int i = 0; i < FR; i++)
             {
                 // push the new rune names into whole new 
                 // Runes themselves
+
+                // Types and id
                 StrN.RType = newRName[i];
                 StrN.ID = NewRId[i];
 
+                // name
+                
+
                 Rune m = new Rune {RType = newRName[i], ID = NewRId[i]};
 
+               
                 Taygr.Add(m);
             }
 
             return; // Return the strings here to the "RuneTree" Aggregate
         }
+
+        
     }
 }

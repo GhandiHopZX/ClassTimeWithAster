@@ -46,6 +46,14 @@ namespace RuneAggregateTree
             var Maintree = "root";
         }
 
+        ~ RuneTree()
+        {
+            // -When all runes are destroyed-
+            // Ragnorok
+
+            var Maintree = "root";
+        }
+
 
     }
 }
