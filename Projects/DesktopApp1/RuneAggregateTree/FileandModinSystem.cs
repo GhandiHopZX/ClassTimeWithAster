@@ -84,20 +84,21 @@ namespace RuneAggregateTree
 
             for (int i = 0; i < FR; i++)
             {
+                int a = 0;
                 // push the new rune names into whole new 
                 // Runes themselves
 
                 // Types and id
-                StrN.RType = newRName[i];
-                StrN.ID = NewRId[i];
+                StrN.RType = newRName[a];
+                StrN.ID = NewRId[a];
 
                 // name
+                //TokenSystem.Names = RN[a];
+
+                Rune m = new Rune {RType = newRName[a], ID = NewRId[a]};
                 
-
-                Rune m = new Rune {RType = newRName[i], ID = NewRId[i]};
-
-               
                 Taygr.Add(m);
+                ++a;
             }
 
             return; // Return the strings here to the "RuneTree" Aggregate
