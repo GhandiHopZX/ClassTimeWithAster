@@ -24,26 +24,36 @@ namespace RuneAggregateTree
             string Essence;
         }
 
-        private RuneTree(Rune runeType, Rune runeID)
+        
+        public class RuneTreeBranch
         {
+            public List<Rune> TaygrIN = new List<Rune>();
             // Branch 1: Taygr(Ability) - Vessel Hierarchy Magick
             // This branch handles - stat buffs and ability buffs
             // Addendum -> from strings to Runes
-            
+            public class Taygr
+            { 
+            private void TaygrBranch()
+            {
 
-            // Branch 2: Volmir(Offensive) - Soul Hierarchy Magick
-            // This branch handles - Projectile attacks and AOE attacks
+            }
+              
 
-            // Branch 3: Essenox(Type) - Force Hierarchy Magick
-            // This branch handles - Effect types and Enchantments
+            }
 
-            // Branch 4: Devina(Creation) - God Hierarchy Magick
-            // This branch handles - Instatiation and Alteration
+        // Branch 2: Volmir(Offensive) - Soul Hierarchy Magick
+        // This branch handles - Projectile attacks and AOE attacks
+
+        // Branch 3: Essenox(Type) - Force Hierarchy Magick
+        // This branch handles - Effect types and Enchantments
+
+        // Branch 4: Devina(Creation) - God Hierarchy Magick
+        // This branch handles - Instatiation and Alteration
 
 
-            // Match tree
+        // Match tree
 
-            var Maintree = "root";
+        //string Maintree = "root";
         }
 
         ~ RuneTree()

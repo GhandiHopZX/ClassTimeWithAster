@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Threading.Tasks;
-using static RuneAggregateTree.RuneTree;
 
 namespace RuneAggregateTree
 {
-    class FileandModinSystem
+    class FileandModinSystem : RuneTree
     {
 
         // importing the sets
@@ -37,7 +36,10 @@ namespace RuneAggregateTree
         // object Rune = new RuneAggregateTree.RuneTree.Rune();
         //Taygr
 
-        private void RuneImport()
+        // reference Taygr hash here
+        public HashSet<Rune> TaygrIN = new HashSet<Rune>();
+        
+        public Rune RuneImport(HashSet<Rune> Taygr)
         {
             var NewRune = new Rune();
 
@@ -59,17 +61,12 @@ namespace RuneAggregateTree
 
             // Addendum -> from strings to Runes
 
-            // reference Taygr hash here
+            
 
-            HashSet<Rune> Taygr = new HashSet<Rune>()
-            {
+        //do
+        //{
 
-            };
-
-            //do
-            //{
-
-            var StrN = new Rune();
+        var StrN = new Rune();
             int FR = Importfunction(path).Count;
             string[] newRName = { };
             int[] NewRId = { };
@@ -96,14 +93,15 @@ namespace RuneAggregateTree
                 //TokenSystem.Names = RN[a];
 
                 Rune m = new Rune {RType = newRName[a], ID = NewRId[a]};
-                
-                Taygr.Add(m);
+
+                TaygrIN.Add(m);
                 ++a;
             }
 
-            return; // Return the strings here to the "RuneTree" Aggregate
+            return TaygrIN; // Return the strings here to the "RuneTree" Aggregate
         }
 
-        
+        //
+
     }
 }
