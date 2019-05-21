@@ -33,15 +33,20 @@ namespace RuneAggregateTree
             return NewRunesTy;
         }
 
-        // object Rune = new RuneAggregateTree.RuneTree.Rune();
-        //Taygr
-
+        //Taygr 
         // reference Taygr hash here
-        public HashSet<Rune> TaygrIN = new HashSet<Rune>();
+        HashSet<Rune> Taygr = new HashSet<Rune>(); // I still gotta pass these Runes into RuneTreeBranch's Taygr hashset
         
-        public Rune RuneImport(HashSet<Rune> Taygr)
+        // try passing the above hash to a database or better yet a tokenization
+        // then send those tokens to a binding source
+        // and just use the RuneTree to add categorization and description to
+        // the obvious tokens(Runes) going into the form and the game
+
+        // RuneImport >> Tokens or db >> bindingsource >> GameObject
+                                                    // >> Forms
+                                                    
+        public HashSet<Rune> TaygrRuneImport()
         {
-            var NewRune = new Rune();
 
             // Tree Type
 
@@ -60,13 +65,10 @@ namespace RuneAggregateTree
             //Importfunction(path2);
 
             // Addendum -> from strings to Runes
-
-            
-
         //do
         //{
 
-        var StrN = new Rune();
+            var StrN = new Rune();
             int FR = Importfunction(path).Count;
             string[] newRName = { };
             int[] NewRId = { };
@@ -94,13 +96,15 @@ namespace RuneAggregateTree
 
                 Rune m = new Rune {RType = newRName[a], ID = NewRId[a]};
 
-                TaygrIN.Add(m);
+                Taygr.Add(m);
                 ++a;
             }
+            
 
-            return TaygrIN; // Return the strings here to the "RuneTree" Aggregate
+            return Taygr; // Return the strings here to the "RuneTree" Aggregate
         }
 
+        
         //
 
     }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Threading.Tasks;
+using static RuneAggregateTree.RuneTree;
 
 namespace RuneAggregateTree
 {
@@ -18,28 +19,28 @@ namespace RuneAggregateTree
 
         public struct Spell
         {
-            string RType;
-            string RClass;
-            private int SID;
-            string Essence;
+            readonly string RType;
+            readonly string RClass;
+            private readonly int SID;
+            readonly string Essence;
         }
 
-        
-        public class RuneTreeBranch
-        {
-            public List<Rune> TaygrIN = new List<Rune>();
-            // Branch 1: Taygr(Ability) - Vessel Hierarchy Magick
-            // This branch handles - stat buffs and ability buffs
-            // Addendum -> from strings to Runes
-            public class Taygr
-            { 
+
+
+        // Branch 1: Taygr(Ability) - Vessel Hierarchy Magick
+        // This branch handles - stat buffs and ability buffs
+        // Addendum -> from strings to Runes
+        //public class Taygr
+        //{
+            public Object TaygrIn = new HashSet<Rune>();
+
             private void TaygrBranch()
             {
 
             }
-              
 
-            }
+
+        //}
 
         // Branch 2: Volmir(Offensive) - Soul Hierarchy Magick
         // This branch handles - Projectile attacks and AOE attacks
@@ -54,17 +55,19 @@ namespace RuneAggregateTree
         // Match tree
 
         //string Maintree = "root";
-        }
 
-        ~ RuneTree()
+
+        ~RuneTree()
         {
             // -When all runes are destroyed-
             // Ragnorok
 
             var Maintree = "root";
         }
-
-
+        
     }
-}
+    
 
+    
+
+}

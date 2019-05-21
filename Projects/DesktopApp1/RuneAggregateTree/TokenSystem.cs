@@ -11,7 +11,7 @@ namespace RuneAggregateTree
     {
         #region
         private string _name = "";
-        private string _names = "";
+        private readonly string _names = "";
         #endregion
 
         public int RTID { get; set; }
