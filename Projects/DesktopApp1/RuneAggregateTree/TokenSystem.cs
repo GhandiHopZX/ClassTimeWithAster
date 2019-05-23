@@ -27,5 +27,11 @@ namespace RuneAggregateTree
         }
 
         public string[] Names;
+
+        //Token stuff
+        
+        
+
     }
+
 }
