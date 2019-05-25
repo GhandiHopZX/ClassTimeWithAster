@@ -116,9 +116,6 @@ namespace RuneAggregateTree
             //Validate
             if (id <= 0)
                 throw new ArgumentOutOfRangeException(nameof(id), "Id must be > 0.");
-            if (rune == null)
-                throw new ArgumentNullException(nameof(rune));
-
             //var val = new ObjectValidator();
 
             //new ObjectValidator().Validate(game);

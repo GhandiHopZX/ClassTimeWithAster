@@ -9,8 +9,7 @@ namespace RuneAggregateTree
 {
     class ObjectValidator
     {
-        //private ObjectValidator()
-        //{ }
+        // use this for the Tokens
 
         /// <summary>Validates an object.</summary>
         /// <param name="value">The object to validate.</param>
