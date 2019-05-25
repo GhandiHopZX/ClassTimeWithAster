@@ -8,7 +8,7 @@ using static RuneAggregateTree.RuneTree;
 
 namespace RuneAggregateTree
 {
-    public abstract class RuneTree
+    public abstract class RuneTree : IRuneDatabase
     {
 
         // the IRuneDatabase looks for its type names then its id
@@ -21,6 +21,7 @@ namespace RuneAggregateTree
 
         public struct Rune
         {
+            public string Name;
             public string RType;
             public int ID { get; set; } // dictates the name and the number
         }
@@ -73,19 +74,19 @@ namespace RuneAggregateTree
         public Rune Add(Rune rune)
         {
             //Validate input
-            if (game == null)
-                throw new ArgumentNullException(nameof(game));
+            if (rune == null)
+                throw new ArgumentNullException(nameof(rune));
 
             //Game must be valid            
             //new ObjectValidator().Validate(game);
-            ObjectValidator.Validate(game);
+            ObjectValidator.Validate(rune);
 
-            //Game names must be unique
-            var existing = FindByName(game.Name);
+            //Rune names must be unique
+            var existing = FindByName(rune.Name);
             if (existing != null)
                 throw new Exception("Game must be unique.");
 
-            return AddCore(game);
+            return AddCore(rune);
         }
 
         public void Delete(int id)
@@ -96,7 +97,7 @@ namespace RuneAggregateTree
             DeleteCore(id);
         }
 
-        public Game Get(int id)
+        public Rune Get(int id)
         {
             if (id <= 0)
                 throw new ArgumentOutOfRangeException(nameof(id), "Id must be > 0.");
@@ -105,34 +106,34 @@ namespace RuneAggregateTree
         }
 
         //public Game[] GetAll()
-        public IEnumerable<Game> GetAll()
+        public IEnumerable<Rune> GetAll()
         {
             return GetAllCore();
         }
 
-        public Game Update(int id, Game game)
+        public Rune Update(int id, Rune rune)
         {
             //Validate
             if (id <= 0)
                 throw new ArgumentOutOfRangeException(nameof(id), "Id must be > 0.");
-            if (game == null)
-                throw new ArgumentNullException(nameof(game));
+            if (rune == null)
+                throw new ArgumentNullException(nameof(rune));
 
             //var val = new ObjectValidator();
 
             //new ObjectValidator().Validate(game);
-            ObjectValidator.Validate(game);
+            ObjectValidator.Validate(rune);
 
             var existing = GetCore(id);
             if (existing == null)
                 throw new Exception("Game does not exist.");
 
             //Game names must be unique            
-            var sameName = FindByName(game.Name);
-            if (sameName != null && sameName.Id != id)
+            var sameName = FindByName(rune.Name);
+            if (sameName != null && sameName.ID != id)
                 throw new Exception("Game must be unique.");
 
-            return UpdateCore(id, game);
+            return UpdateCore(id, rune);
         }
 
         protected abstract Rune AddCore(Rune rune);
@@ -165,11 +166,11 @@ namespace RuneAggregateTree
             //return null;
         }
 
-        protected abstract Game GetCore(int id);
+        protected abstract Rune GetCore(int id);
 
-        protected abstract IEnumerable<Game> GetAllCore();
+        protected abstract IEnumerable<Rune> GetAllCore();
 
-        protected abstract Game UpdateCore(int id, Game newGame);
+        protected abstract Rune UpdateCore(int id, Rune newRune);
 
         ~RuneTree()
         {

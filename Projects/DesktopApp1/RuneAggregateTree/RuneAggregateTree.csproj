@@ -43,8 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FileandModinSystem.cs" />
+    <Compile Include="IRuneDatabase.cs" />
     <Compile Include="MemoryRuneDatabase.cs" />
     <Compile Include="Metatron.cs" />
+    <Compile Include="ObjectValidator.cs" />
     <Compile Include="RuneTree.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TokenSystem.cs" />

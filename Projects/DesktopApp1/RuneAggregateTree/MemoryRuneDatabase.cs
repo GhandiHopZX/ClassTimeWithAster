@@ -17,8 +17,6 @@ namespace RuneAggregateTree
             return rune;
         }
 
-        protected void ;
-
         private Rune Clone(Rune rune)
         {
             var newRune = new Rune();
@@ -32,6 +30,27 @@ namespace RuneAggregateTree
             target.ID = source.ID;
             target.RType = source.RType;
         }
+
+        protected override void DeleteCore(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override Rune GetCore(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override IEnumerable<Rune> GetAllCore()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override Rune UpdateCore(int id, Rune newRune)
+        {
+            throw new NotImplementedException();
+        }
+
         //list for runes
 
         private readonly List<Rune> _items = new List<Rune>();
