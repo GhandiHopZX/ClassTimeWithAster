@@ -104,6 +104,5 @@ namespace RuneAggregateTree
             return Taygr; // Return the strings here to the "RuneTree" Aggregate
         }
 
-       
     }
 }
