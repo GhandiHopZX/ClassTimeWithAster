@@ -42,7 +42,7 @@ namespace RuneAggregateTree
         // and just use the RuneTree to add categorization and description to
         // the obvious tokens(Runes) going into the form and the game
 
-        // RuneImport >> Tokens or db >> bindingsource >> GameObject
+        // RuneImport >> Tokens(obj) or db >> bindingsource >> GameObject
         // >> Forms
 
         public HashSet<Rune> TaygrRuneImport()
@@ -53,10 +53,10 @@ namespace RuneAggregateTree
             // You need another file path for the Rune Names
 
             /// This is for the rune type
-            string path = @"G:\RyuuseiEngine\Assets\Mods\TaygrRuneTypes.txt";
+            string path = @"F:\RyuuseiEngine\Mods\TaygrRuneTypes.txt";
            
             /// This is for the rune name
-            string path2 = @"G:\RyuuseiEngine\Assets\Mods\TaygrRuneNames.txt";
+            string path2 = @"F:\RyuuseiEngine\Mods\TaygrRuneNames.txt";
 
             //// the rune types
             //Importfunction(path);
