@@ -35,7 +35,7 @@ namespace RuneAggregateTree
 
         //Taygr 
         // reference Taygr hash here
-        HashSet<Rune> Taygr = new HashSet<Rune> { }; // I still gotta pass these Runes into RuneTreeBranch's Taygr hashset
+        private readonly HashSet<Rune> Taygr = new HashSet<Rune> { }; // I still gotta pass these Runes into RuneTreeBranch's Taygr hashset
         
         // try passing the above hash to a database or better yet a tokenization
         // then send those tokens to a binding source
@@ -103,6 +103,9 @@ namespace RuneAggregateTree
 
             return Taygr; // Return the strings here to the "RuneTree" Aggregate
         }
+
+        // to db
+
 
     }
 }
