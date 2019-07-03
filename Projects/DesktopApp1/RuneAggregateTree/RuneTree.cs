@@ -19,7 +19,7 @@ namespace RuneAggregateTree
         // Essenox Rtype = "Effects, Enchantmens"
         // Daevina Rtype = "Instantiation and Alteration"
 
-        
+
         public struct Rune
         {
             [Required(AllowEmptyStrings = false)]
@@ -53,7 +53,7 @@ namespace RuneAggregateTree
         // Addendum -> from strings to Runes
         //public class Taygr
         //{
-        public Object TaygrIn = new HashSet<Rune>();
+        public HashSet<Rune> TaygrIn { get /*=> RuneAggregateTree.*/; }
 
         private void TaygrBranch()
         {
@@ -84,9 +84,6 @@ namespace RuneAggregateTree
         {
             throw new NotImplementedException();
         }
-
-        public Rune[] TaygrSet;
-
         ////validation
         //public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         //{

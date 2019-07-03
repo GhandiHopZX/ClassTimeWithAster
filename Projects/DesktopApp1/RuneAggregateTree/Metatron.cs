@@ -21,30 +21,5 @@ namespace RuneAggregateTree
 
             throw new NotImplementedException();
         }
-
-        protected override Rune AddCore(Rune rune)
-        {
-            throw new NotImplementedException();
-        }
-
-        protected override void DeleteCore(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        protected override IEnumerable<Rune> GetAllCore()
-        {
-            throw new NotImplementedException();
-        }
-
-        protected override Rune GetCore(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        protected override Rune UpdateCore(int id, Rune newRune)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
