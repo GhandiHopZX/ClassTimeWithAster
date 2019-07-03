@@ -50,6 +50,7 @@
     <Compile Include="RuneDatabase.cs" />
     <Compile Include="RuneTree.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlRuneDatabase.cs" />
     <Compile Include="TokenSystem.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
