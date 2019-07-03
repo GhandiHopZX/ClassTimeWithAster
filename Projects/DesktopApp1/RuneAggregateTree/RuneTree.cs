@@ -19,7 +19,7 @@ namespace RuneAggregateTree
         // Essenox Rtype = "Effects, Enchantmens"
         // Daevina Rtype = "Instantiation and Alteration"
 
-
+        // a single rune...
         public struct Rune
         {
             [Required(AllowEmptyStrings = false)]
@@ -30,8 +30,20 @@ namespace RuneAggregateTree
             }
             public string RType;
             private string _name;
+            private string description;
+
+            public decimal Price { get; set; }
+
+            [Range(0, Double.MaxValue, ErrorMessage = "Price must be >= 0.")]
+            public string Description
+            {
+                get => description ?? "";
+                set => description = value;
+            }
 
             public int ID { get; set; } // dictates the name and the number
+
+            public override string ToString() => Name;
         }
 
         // Every New spell is a new entry in the database of spells
@@ -46,6 +58,7 @@ namespace RuneAggregateTree
             readonly string[] RClass;
             private readonly int SID;
             readonly string Essence;
+            private string Description;
         }
 
         // Branch 1: Taygr(Ability) - Vessel Hierarchy Magick

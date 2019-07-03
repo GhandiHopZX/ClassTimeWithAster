@@ -81,9 +81,11 @@ namespace RuneAggregateTree
             //types
             Importfunction(path).CopyTo(newRName);
 
-            for (int i = 0; i < FR; i++)
+            int a = 0;
+
+            for (int i = 0; i < FR; i++, a++)
             {
-                int a = 0;
+                
                 // push the new rune names into whole new 
                 // Runes themselves
 
@@ -97,7 +99,6 @@ namespace RuneAggregateTree
                 Rune m = new Rune {RType = newRName[a], ID = NewRId[a]};
 
                 Taygr.Add(m);
-                ++a;
             }
             
 
