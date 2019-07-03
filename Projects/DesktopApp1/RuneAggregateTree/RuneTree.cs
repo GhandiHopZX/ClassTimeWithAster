@@ -66,6 +66,7 @@ namespace RuneAggregateTree
         // Addendum -> from strings to Runes
         //public class Taygr
         //{
+
         public HashSet<Rune> TaygrIn { get /*=> RuneAggregateTree.*/; }
 
         private void TaygrBranch()
@@ -149,12 +150,14 @@ namespace RuneAggregateTree
 
         ~RuneTree()
         {
-            
+
         }
 
         #region
-        
+
         #endregion
+
+
 
     }
 

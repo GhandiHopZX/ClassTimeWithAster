@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace RuneAggregateTree
 {
+    // To fix this shit turn the damn runes into 
+    // tokenable objects already... and rename
+    // this mess
     public class SqlRuneDatabase : RuneDatabase
     {
         public SqlRuneDatabase (string connectionString)
@@ -130,7 +133,7 @@ namespace RuneAggregateTree
                 };
             };
 
-            return ;
+            return null;
         }
         private string GetString(IDataReader reader, string name)
         {
@@ -144,7 +147,30 @@ namespace RuneAggregateTree
 
         protected override RuneTree.Rune UpdateCore(int id, RuneTree.Rune newRune)
         {
-            throw new NotImplementedException();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+
+                //var cmd = new SqlCommand("", connection);
+                var cmd = connection.CreateCommand();
+                cmd.CommandText = "UpdateGame";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                //Add parameter 1 - long way when you need control over parameter
+                var parameter = new SqlParameter("@name", System.Data.SqlDbType.NVarChar);
+                parameter.Value newRune.Name;
+                cmd.Parameters.Add(parameter);
+
+                //Add parameter 2 - quick way when you just need type/value
+                cmd.Parameters.AddWithValue("@description", newRune.Description);
+                cmd.Parameters.AddWithValue("@price", newRune.Price);
+                cmd.Parameters.AddWithValue("@id", id);
+
+                //No results
+                cmd.ExecuteNonQuery();
+            };
+
+            return newRune;
         }
 
 
