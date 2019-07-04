@@ -7,31 +7,29 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RuneAggregateTree
 {
-    public class TokenSystem
+    public class Token
     {
         #region
-        private string _name = "";
-        private readonly string _names = "";
+        private string _rname = "";
         #endregion
 
         public int RTID { get; set; }
 
-        [Required(AllowEmptyStrings = false)]
-        public string Name
-        {
-            //Expression bodied members
-            //get { return _name ?? ""; }
-            get => _name ?? "";
-            //set { _name = value ?? ""; }
-            set => _name = value ?? "";
-        }
+        public string Rname { get => _rname; set => _rname = value; }
 
-        public string[] Names;
+        public string Name { get => Rname ?? ""; set => Rname = value ?? ""; }
+        public string[] RType { get => rType; set => rType = value; }
 
+        private string[] rType;
+
+        
         //Token stuff
-        
-        
 
+        public Token(string rname, int rTID)
+        {
+            Rname = rname;
+            RTID = rTID;
+        }
     }
 
 }
