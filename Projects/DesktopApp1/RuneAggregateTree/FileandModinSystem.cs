@@ -106,7 +106,27 @@ namespace RuneAggregateTree
         }
 
         // to db
+        public object RuneToToken()
+        {
+            object ticket;
 
+            int i;
+            int y = 0;
+            string[] maoi; 
+
+
+            for (i = 0; y < Taygr.Count; i++)
+            {
+
+                Taygr.ToArray;
+
+                ticket.Name;
+
+            }
+
+
+            return ;
+        }
 
     }
 }

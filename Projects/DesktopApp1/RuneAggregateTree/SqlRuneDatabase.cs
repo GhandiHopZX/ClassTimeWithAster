@@ -50,7 +50,6 @@ namespace RuneAggregateTree
             return new SqlConnection(_connectionString);
         }
 
-
         protected override void DeleteCore(int id)
         {
             using (var connection = GetConnection())
