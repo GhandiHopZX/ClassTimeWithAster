@@ -36,7 +36,7 @@ namespace RuneAggregateTree
         //Taygr 
         // reference Taygr hash here
         private HashSet<Rune> Taygr = new HashSet<Rune> { }; // I still gotta pass these Runes into RuneTreeBranch's Taygr hashset
-        
+
         // try passing the above hash to a database or better yet a tokenization
         // then send those tokens to a binding source
         // and just use the RuneTree to add categorization and description to
@@ -44,7 +44,7 @@ namespace RuneAggregateTree
 
         // RuneImport >> Tokens(obj) or db >> bindingsource >> GameObject
         // >> Forms
-
+        public HashSet<Token> GetTokens;
         public HashSet<Rune> TaygrRuneImport()
         {
 
@@ -70,10 +70,12 @@ namespace RuneAggregateTree
 
             var StrN = new Rune();
             int FR = Importfunction(path).Count;
-            string[] newRName = { };
+            string[] newTName = { };
             int[] NewRId = { };
-            string[] RN = { }; 
-
+            string[] RN = { };
+            string[] Desc = { };
+            decimal[] Pee = { };
+            string[] newRName = { };
 
             //names
             Importfunction(path2).CopyTo(RN);
@@ -85,48 +87,50 @@ namespace RuneAggregateTree
 
             for (int i = 0; i < FR; i++, a++)
             {
-                
+
                 // push the new rune names into whole new 
                 // Runes themselves
 
-                // Types and id
-                StrN.RType = newRName[a];
+                //// Types and id
+                StrN.RType = newTName[a];
                 StrN.ID = NewRId[a];
-
+                StrN.Price = Pee[a];
+                StrN.Description = Desc[a];
+                StrN.Name = newRName[a];
                 // name
                 //TokenSystem.Names = RN[a];
 
-                Rune m = new Rune {RType = newRName[a], ID = NewRId[a]};
+                Rune m = new Rune {RType = newTName[a], ID = NewRId[a], Description = Desc[a], Price = Pee[a]};
 
+                Token _tokend = new Token(StrN.Name, StrN.RType, StrN.ID, StrN.Price, StrN.Description);
+
+                
                 Taygr.Add(m);
+                GetTokens.Add(_tokend);
             }
             
 
             return Taygr; // Return the strings here to the "RuneTree" Aggregate
         }
 
-        // to db
-        public object RuneToToken()
+        //to db
+        public Token[] RuneToToken()
         {
             object ticket;
-
+            
             int i;
             int y = 0;
-            string[] maoi; 
+            string[] maoi;
 
-
-            for (i = 0; y < Taygr.Count; i++)
+            for (i = 0; y < GetTokens.Count; i++, y++)
             {
-
-                Taygr.ToArray;
-
-                ticket.Name;
-
+               //GetTokens.CopyTo(sqlruneDatabase); FInd a solution to this <<<<<<<<<<<<<<
             }
 
-
-            return ;
+            return null;
         }
+
+        SqlRuneDatabase sqlruneDatabase;
 
     }
 }
