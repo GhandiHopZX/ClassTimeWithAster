@@ -124,13 +124,13 @@ namespace RuneAggregateTree
 
             for (i = 0; y < GetTokens.Count; i++, y++)
             {
-               //GetTokens.CopyTo(sqlruneDatabase); FInd a solution to this <<<<<<<<<<<<<<
+                //GetTokens.CopyTo(sqlruneDatabase); FInd a solution to this <<<<<<<<<<<<<<
             }
 
             return null;
         }
 
-        SqlRuneDatabase sqlruneDatabase;
+        private SqlRuneDatabase sqlruneDatabase;
 
     }
 }

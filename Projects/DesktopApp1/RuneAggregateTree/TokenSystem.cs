@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RuneAggregateTree
 {
-    public class Token
+    public class Token : IValidatableObject
     {
         #region
         private string _rname = "";

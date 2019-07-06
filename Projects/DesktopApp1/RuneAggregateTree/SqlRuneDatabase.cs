@@ -6,12 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RuneAggregateTree
+namespace RuneAggregateTree.Sql
 {
     // To fix this shit turn the damn runes into 
     // tokenable objects already... and rename
     // this mess
-    public class SqlRuneDatabase : RuneDatabase
+    public class SqlRuneDatabase : TokenDatabase
     {
         public SqlRuneDatabase (string connectionString)
         {
@@ -144,7 +144,7 @@ namespace RuneAggregateTree
             return reader.GetString(ordinal);
         }
 
-        protected override RuneTree.Rune UpdateCore(int id, RuneTree.Rune newRune)
+        protected override RuneTree.Rune UpdateCore(int id, Token newRune)
         {
             using (var connection = GetConnection())
             {

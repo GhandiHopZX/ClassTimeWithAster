@@ -6,24 +6,24 @@ using System.Threading.Tasks;
 
 namespace RuneAggregateTree
 {
-    class TokenDatabase
+    public abstract class TokenDatabase : ITokenDatabase
     {
-        public Token Add(Token game)
+        public Token Add(Token token)
         {
             //Validate input
-            if (game == null)
-                throw new ArgumentNullException(nameof(game));
+            if (token == null)
+                throw new ArgumentNullException(nameof(token));
 
             //Game must be valid            
             //new ObjectValidator().Validate(game);
-            ObjectValidator.Validate(game);
+            ObjectValidator.Validate(token);
 
             //Game names must be unique
-            var existing = FindByName(game.Name);
+            var existing = FindByName(token.Name);
             if (existing != null)
                 throw new Exception("Game must be unique.");
 
-            return AddCore(game);
+            return AddCore(token);
         }
 
         public void Delete(int id)
@@ -48,32 +48,32 @@ namespace RuneAggregateTree
             return GetAllCore();
         }
 
-        public Token Update(int id, Token game)
+        public Token Update(int id, Token token)
         {
             //Validate
             if (id <= 0)
                 throw new ArgumentOutOfRangeException(nameof(id), "Id must be > 0.");
-            if (game == null)
-                throw new ArgumentNullException(nameof(game));
+            if (token == null)
+                throw new ArgumentNullException(nameof(token));
 
             //var val = new ObjectValidator();
 
             //new ObjectValidator().Validate(game);
-            ObjectValidator.Validate(game);
+            ObjectValidator.Validate(token);
 
             var existing = GetCore(id);
             if (existing == null)
                 throw new Exception("Game does not exist.");
 
             //Game names must be unique            
-            var sameName = FindByName(game.Name);
-            if (sameName != null && sameName.Id != id)
+            var sameName = FindByName(token.Name);
+            if (sameName != null && sameName.RTID != id)
                 throw new Exception("Game must be unique.");
 
-            return UpdateCore(id, game);
+            return UpdateCore(id, token);
         }
 
-        protected abstract Token AddCore(Token game);
+        protected abstract Token AddCore(Token token);
 
         protected abstract void DeleteCore(int id);
 
@@ -84,10 +84,10 @@ namespace RuneAggregateTree
             //from
             //where
             // => IEnumerable<T>
-            return (from game in GetAllCore()
-                    where String.Compare(game.Name, name, true) == 0
+            return (from token in GetAllCore()
+                    where String.Compare(token.Name, name, true) == 0
                     //orderby game.Name, game.Id descending
-                    select game).FirstOrDefault();
+                    select token).FirstOrDefault();
 
             //Extension method equivalent
             //return GetAllCore().Where(game => String.Compare(game.Name, name, true) == 0)
@@ -107,6 +107,6 @@ namespace RuneAggregateTree
 
         protected abstract IEnumerable<Token> GetAllCore();
 
-        protected abstract Token UpdateCore(int id, Token newGame);
+        protected abstract Token UpdateCore(int id, Token newToken);
     }
 }

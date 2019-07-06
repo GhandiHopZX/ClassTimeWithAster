@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="FileandModinSystem.cs" />
     <Compile Include="IRuneDatabase.cs" />
+    <Compile Include="ITokenDatabase.cs" />
     <Compile Include="MemoryRuneDatabase.cs" />
     <Compile Include="Metatron.cs" />
     <Compile Include="ObjectValidator.cs" />
