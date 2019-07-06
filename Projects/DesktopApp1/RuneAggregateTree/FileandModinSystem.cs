@@ -130,7 +130,7 @@ namespace RuneAggregateTree
             return null;
         }
 
-        private SqlRuneDatabase sqlruneDatabase;
+        //private SqlRuneDatabase sqlruneDatabase;
 
     }
 }

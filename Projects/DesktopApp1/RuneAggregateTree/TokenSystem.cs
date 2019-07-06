@@ -36,6 +36,10 @@ namespace RuneAggregateTree
             priceh = price;
         }
 
+        public Token()
+        {
+        }
+
         public Token[] Tokens(RuneTree.Rune strN)
         {
             this.strN = strN;

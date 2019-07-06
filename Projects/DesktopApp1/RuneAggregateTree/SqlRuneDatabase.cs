@@ -19,7 +19,7 @@ namespace RuneAggregateTree.Sql
         }
 
         private readonly string _connectionString;
-        protected override RuneTree.Rune AddCore(RuneTree.Rune rune)
+        protected override Token AddCore(Token token)
         {
             using (var connection = GetConnection())
             {
@@ -32,17 +32,17 @@ namespace RuneAggregateTree.Sql
 
                 //Add parameter 1 - long way when you need control over parameter
                 var parameter = new SqlParameter("@name", System.Data.SqlDbType.NVarChar);
-                parameter.Value = rune.Name;
+                parameter.Value = token.Name;
                 cmd.Parameters.Add(parameter);
 
                 //Add parameter 2 - quick way when you just need type/value
-                cmd.Parameters.AddWithValue("@description", rune.Description);
-                cmd.Parameters.AddWithValue("@price", rune.Price);
+                cmd.Parameters.AddWithValue("@description", token.description);
+                cmd.Parameters.AddWithValue("@price", token.priceh);
 
                 var result = Convert.ToInt32(cmd.ExecuteScalar());
 
-                rune.ID = result;
-                return rune;
+                token.RTID = result;
+                return token;
             }
         }
         private SqlConnection GetConnection()
@@ -68,7 +68,7 @@ namespace RuneAggregateTree.Sql
             };
         }
 
-        protected override IEnumerable<RuneTree.Rune> GetAllCore()
+        protected override IEnumerable<Token> GetAllCore()
         {
             var ds = new DataSet();
 
@@ -93,40 +93,40 @@ namespace RuneAggregateTree.Sql
             if (table != null)
             {
                 return from r in table.Rows.OfType<DataRow>()
-                       select new RuneTree.Rune()
+                       select new Token()
                        {
-                           ID = Convert.ToInt32(r[0]),  //Ordinal, convert
+                           RTID = Convert.ToInt32(r[0]),  //Ordinal, convert
                            Name = r["Name"].ToString(), //By name, convert
-                           Description = r.IsNull("description") ? "" : r["description"].ToString(), //handle DB nulls
-                           Price = r.Field<decimal>("Price"),
+                           description = r.IsNull("description") ? "" : r["description"].ToString(), //handle DB nulls
+                           priceh = r.Field<decimal>("Price"),
                           
                        };
             };
 
-            return Enumerable.Empty<RuneTree.Rune>();
+            return Enumerable.Empty<Token>();
         }
 
-        protected override RuneTree.Rune GetCore(int id)
+        protected override Token GetCore(int id)
         {
             using (var conn = GetConnection())
             {
                 var cmd = conn.CreateCommand();
-                cmd.CommandText = "GetRunes";
+                cmd.CommandText = "GetTokens";
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 conn.Open();
                 var reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    var runeId = reader.GetInt32(0);
-                    if (runeId == id)
+                    var tokenId = reader.GetInt32(0);
+                    if (tokenId == id)
                     {
-                        return new RuneTree.Rune()
+                        return new Token()
                         {
-                            ID = runeId,
+                            RTID = tokenId,
                             Name = GetString(reader, "Name"),
-                            Description = GetString(reader, "Description"),
-                            Price = reader.GetFieldValue<decimal>(3)
+                            description = GetString(reader, "Description"),
+                            priceh = reader.GetFieldValue<decimal>(3)
                         };
                     };
                 };
@@ -144,7 +144,7 @@ namespace RuneAggregateTree.Sql
             return reader.GetString(ordinal);
         }
 
-        protected override RuneTree.Rune UpdateCore(int id, Token newRune)
+        protected override Token UpdateCore(int id, Token token)
         {
             using (var connection = GetConnection())
             {
@@ -157,19 +157,19 @@ namespace RuneAggregateTree.Sql
 
                 //Add parameter 1 - long way when you need control over parameter
                 var parameter = new SqlParameter("@name", System.Data.SqlDbType.NVarChar);
-                parameter.Value newRune.Name;
+                parameter.Value = token.Name;
                 cmd.Parameters.Add(parameter);
 
                 //Add parameter 2 - quick way when you just need type/value
-                cmd.Parameters.AddWithValue("@description", newRune.Description);
-                cmd.Parameters.AddWithValue("@price", newRune.Price);
+                cmd.Parameters.AddWithValue("@description", token.description);
+                cmd.Parameters.AddWithValue("@price", token.priceh);
                 cmd.Parameters.AddWithValue("@id", id);
 
                 //No results
                 cmd.ExecuteNonQuery();
             };
 
-            return newRune;
+            return token;
         }
 
 
