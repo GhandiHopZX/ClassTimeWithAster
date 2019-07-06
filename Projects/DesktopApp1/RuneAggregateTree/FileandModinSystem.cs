@@ -45,6 +45,10 @@ namespace RuneAggregateTree
         // RuneImport >> Tokens(obj) or db >> bindingsource >> GameObject
         // >> Forms
         public HashSet<Token> GetTokens;
+
+        public static Rune StrN { get; internal set; }
+        public Token SetR { get; set; }
+
         public HashSet<Rune> TaygrRuneImport()
         {
 
@@ -114,7 +118,7 @@ namespace RuneAggregateTree
         }
 
         //to db
-        public Token[] RuneToToken()
+        public Token[] TokenToDB()
         {
             object ticket;
             
@@ -124,7 +128,7 @@ namespace RuneAggregateTree
 
             for (i = 0; y < GetTokens.Count; i++, y++)
             {
-                 /*FInd a solution to this <<<<<<<<<<<<<<*/
+                /*FInd a solution to this <<<<<<<<<<<<<<*/
             }
 
             Sql.SqlRuneDatabase sqlRuneDatabase;

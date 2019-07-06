@@ -23,7 +23,7 @@ namespace RuneAggregateTree
         private string rType;
         public string description;
         public decimal priceh;
-        private RuneTree.Rune strN;
+        //private RuneTree.Rune strN;
 
         //Token stuff
 
@@ -40,13 +40,13 @@ namespace RuneAggregateTree
         {
         }
 
-        public Token[] Tokens(RuneTree.Rune strN)
-        {
-            this.strN = strN;
-            Token tokend = new Token(strN.Name, strN.RType, strN.ID, strN.Price, strN.Description);
-            Token[] Tokenbag = { };
-            return Tokenbag;
-        }
+        //public Token[] Tokens(RuneTree.Rune strN)
+        //{
+        //    RuneAggregateTree.FileandModinSystem.StrN = strN;
+        //    Token tokend = new Token(strN.Name, strN.RType, strN.ID, strN.Price, strN.Description);
+        //    Token[] Tokenbag = { };
+        //    return Tokenbag;
+        //}
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {

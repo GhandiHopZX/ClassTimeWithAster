@@ -9,13 +9,13 @@ namespace RuneAggregateTree
     class MemoryRuneDatabase : RuneTree
     {
         //Memory
-        protected override Rune AddCore(Rune rune)
-        {
-            rune.ID = ++_nextId;
-            _items.Add(Clone(rune));
+        //protected override Rune AddCore(Rune rune)
+        //{
+        //    rune.ID = ++_nextId;
+        //    _items.Add(Clone(rune));
 
-            return rune;
-        }
+        //    return rune;
+        //}
 
         private Rune Clone(Rune rune)
         {
@@ -31,25 +31,25 @@ namespace RuneAggregateTree
             target.RType = source.RType;
         }
 
-        protected override void DeleteCore(int id)
-        {
-            throw new NotImplementedException();
-        }
+        //protected override void DeleteCore(int id)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        protected override Rune GetCore(int id)
-        {
-            throw new NotImplementedException();
-        }
+        //protected override Rune GetCore(int id)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        protected override IEnumerable<Rune> GetAllCore()
-        {
-            throw new NotImplementedException();
-        }
+        //protected override IEnumerable<Rune> GetAllCore()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        protected override Rune UpdateCore(int id, Rune newRune)
-        {
-            throw new NotImplementedException();
-        }
+        //protected override Rune UpdateCore(int id, Rune newRune)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         //list for runes
 
