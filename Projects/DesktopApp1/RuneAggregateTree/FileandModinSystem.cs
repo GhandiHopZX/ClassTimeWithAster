@@ -124,9 +124,10 @@ namespace RuneAggregateTree
 
             for (i = 0; y < GetTokens.Count; i++, y++)
             {
-                //GetTokens.CopyTo(sqlruneDatabase); FInd a solution to this <<<<<<<<<<<<<<
+                 /*FInd a solution to this <<<<<<<<<<<<<<*/
             }
 
+            Sql.SqlRuneDatabase sqlRuneDatabase;
             return null;
         }
 

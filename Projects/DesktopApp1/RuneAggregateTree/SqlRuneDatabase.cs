@@ -8,9 +8,7 @@ using System.Threading.Tasks;
 
 namespace RuneAggregateTree.Sql
 {
-    // To fix this shit turn the damn runes into 
-    // tokenable objects already... and rename
-    // this mess
+    // RUNE TOKENSSSSSS!!!!!
     public class SqlRuneDatabase : TokenDatabase
     {
         public SqlRuneDatabase (string connectionString)
