@@ -18,10 +18,10 @@ namespace RuneAggregateTree
             // the essense for the spell creation.
             // The Rune branch will also influence the 
             // hierarchy of the Rclass on the Metatron.
+            
+            
 
-            FileandModinSystem.
-
-            //throw new NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

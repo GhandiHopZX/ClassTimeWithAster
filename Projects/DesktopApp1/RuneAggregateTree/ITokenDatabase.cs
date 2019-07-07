@@ -38,5 +38,6 @@ namespace RuneAggregateTree
       /// A game with the same name already exists.
       /// </exception>
       /// <exception cref="ValidationException"><paramref name="token"/> is invalid.</exception>
-      Token Update(int id, Token token);    }
+      Token Update(int id, Token token);
+    }
 }

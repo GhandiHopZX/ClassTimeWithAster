@@ -40,13 +40,13 @@ namespace RuneAggregateTree
         {
         }
 
-        //public Token[] Tokens(RuneTree.Rune strN)
-        //{
-        //    RuneAggregateTree.FileandModinSystem.StrN = strN;
-        //    Token tokend = new Token(strN.Name, strN.RType, strN.ID, strN.Price, strN.Description);
-        //    Token[] Tokenbag = { };
-        //    return Tokenbag;
-        //}
+        public Token[] Tokens(RuneTree.Rune strN)
+        {
+            RuneAggregateTree.FileandModinSystem.StrN = strN;
+            Token tokend = new Token(strN.Name, strN.RType, strN.ID, strN.Price, strN.Description);
+            Token[] Tokenbag = { };
+            return Tokenbag;
+        }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {

@@ -33,9 +33,10 @@ namespace RuneAggregateTree
             return NewRunesTy;
         }
 
-        //Taygr 
+        /* //Taygr 
+        
         // reference Taygr hash here
-        private HashSet<Rune> Taygr = new HashSet<Rune> { }; // I still gotta pass these Runes into RuneTreeBranch's Taygr hashset
+        
 
         // try passing the above hash to a database or better yet a tokenization
         // then send those tokens to a binding source
@@ -43,11 +44,24 @@ namespace RuneAggregateTree
         // the obvious tokens(Runes) going into the form and the game
 
         // RuneImport >> Tokens(obj) or db >> bindingsource >> GameObject
-        // >> Forms
+        */
+
+        private HashSet<Rune> Taygr = new HashSet<Rune> { }; // done
+        private HashSet<Rune> Volmir = new HashSet<Rune> { }; 
+        private HashSet<Rune> Essenox = new HashSet<Rune> { }; 
+        private HashSet<Rune> Daevina = new HashSet<Rune> { }; 
+
+        // >> Forms 
         public HashSet<Token> GetTokens;
 
         public static Rune StrN { get; internal set; }
+
         public Token SetR { get; set; }
+
+        public HashSet<Rune> Daevina1 { get => Daevina; set => Daevina = value; }
+        public HashSet<Rune> Essenox1 { get => Essenox; set => Essenox = value; }
+        public HashSet<Rune> Volmir1 { get => Volmir; set => Volmir = value; }
+        public HashSet<Rune> Taygr1 { get => Taygr; set => Taygr = value; }
 
         public HashSet<Rune> TaygrRuneImport()
         {
@@ -104,7 +118,7 @@ namespace RuneAggregateTree
                 // name
                 //TokenSystem.Names = RN[a];
 
-                Rune m = new Rune {RType = newTName[a], ID = NewRId[a], Description = Desc[a], Price = Pee[a]};
+                Rune m = new Rune {RType = newTName[a], ID = NewRId[a], Description = Desc[a], Price = Pee[a], Name = newRName[a]};
 
                 Token _tokend = new Token(StrN.Name, StrN.RType, StrN.ID, StrN.Price, StrN.Description);
 
@@ -126,10 +140,12 @@ namespace RuneAggregateTree
             int y = 0;
             string[] maoi;
 
-            for (i = 0; y < GetTokens.Count; i++, y++)
-            {
-                /*FInd a solution to this <<<<<<<<<<<<<<*/
-            }
+            Taygr1.CopyTo(TaygrC);/*FInd a solution to this <<<<<<<<<<<<<<*/
+
+            //for (i = 0; y < GetTokens.Count; i++, y++)
+            //{
+                
+            //}
 
             Sql.SqlRuneDatabase sqlRuneDatabase;
             return null;

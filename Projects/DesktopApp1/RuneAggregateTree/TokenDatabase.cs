@@ -86,7 +86,7 @@ namespace RuneAggregateTree
             // => IEnumerable<T>
             return (from token in GetAllCore()
                     where String.Compare(token.Name, name, true) == 0
-                    //orderby game.Name, game.Id descending
+                    orderby token.Name, token.RTID descending
                     select token).FirstOrDefault();
 
             //Extension method equivalent

@@ -67,7 +67,10 @@ namespace RuneAggregateTree
         //public class Taygr
         //{
 
-        public HashSet<Rune> TaygrIn { get /*=> RuneAggregateTree.*/; }
+        //public HashSet<Rune> TaygrIn { get => taygrIn; set => taygrIn = value; }
+        public Rune[] TaygrC { get => taygrC; set => taygrC = value; }
+
+        private Rune[] taygrC;
 
         private void TaygrBranch()
         {
@@ -125,8 +128,8 @@ namespace RuneAggregateTree
 
         //}
 
-        // Branch 2: Volmir(Offensive) - Soul Hierarchy Magick
-        // This branch handles - Projectile attacks and AOE attacks
+        //Branch 2: Volmir(Offensive) - Soul Hierarchy Magick
+        //This branch handles - Projectile attacks and AOE attacks
 
         // Branch 3: Essenox(Type) - Force Hierarchy Magick
         // This branch handles - Effect types and Enchantments
@@ -147,6 +150,7 @@ namespace RuneAggregateTree
         //alive = false
         private int mana = 1000000;
         private int Manaintake = 0;
+        //private HashSet<Rune> taygrIn;
 
         ~RuneTree()
         {
