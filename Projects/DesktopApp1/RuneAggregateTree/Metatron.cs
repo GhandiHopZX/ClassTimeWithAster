@@ -11,7 +11,8 @@ namespace RuneAggregateTree
         public Metatron Table()
         {
             // this is for the rune lookup
-            List<Rune> TaygrListup = new List<Rune> { }; 
+            //TaygrC
+
             // for now this is like this but later 
             // I want to make a table where the 
             // Metatron makes up different Runes 
