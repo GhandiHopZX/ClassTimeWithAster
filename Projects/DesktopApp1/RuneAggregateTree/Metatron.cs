@@ -10,6 +10,8 @@ namespace RuneAggregateTree
     {
         public Metatron Table()
         {
+            // this is for the rune lookup
+            List<Rune> TaygrListup = new List<Rune> { }; 
             // for now this is like this but later 
             // I want to make a table where the 
             // Metatron makes up different Runes 
@@ -18,9 +20,8 @@ namespace RuneAggregateTree
             // the essense for the spell creation.
             // The Rune branch will also influence the 
             // hierarchy of the Rclass on the Metatron.
-            
-            
 
+            Rune Taygr;
             throw new NotImplementedException();
         }
     }
