@@ -70,11 +70,15 @@ namespace RuneAggregateTree
 
             // You need another file path for the Rune Names
 
-            /// This is for the rune type
+            // This is for the Taygr rune types
             string path = @"F:\RyuuseiEngine\Mods\TaygrRuneTypes.txt";
            
-            /// This is for the rune name
             string path2 = @"F:\RyuuseiEngine\Mods\TaygrRuneNames.txt";
+
+            // This is for the Essenox rune type
+            string path3 = @"F:\RyuuseiEngine\Mods\EssenoxRuneTypes.txt";
+
+            string path4 = @"F:\RyuuseiEngine\Mods\EssenoxRuneNames.txt";
 
             //// the rune types
             //Importfunction(path);
@@ -83,8 +87,8 @@ namespace RuneAggregateTree
             //Importfunction(path2);
 
             // Addendum -> from strings to Runes
-        //do
-        //{
+            //do
+            //{
 
             var StrN = new Rune();
             int FR = Importfunction(path).Count;

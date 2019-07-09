@@ -77,31 +77,6 @@ namespace RuneAggregateTree
 
         }
 
-        public Rune Add(Rune rune)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(int ID)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Rune Get(int ID)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Rune> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Rune Update(int id, Rune rune)
-        {
-            throw new NotImplementedException();
-        }
-
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             var items = new List<ValidationResult>();
