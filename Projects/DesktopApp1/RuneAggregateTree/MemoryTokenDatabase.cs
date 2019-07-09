@@ -3,36 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static RuneAggregateTree.RuneTree;
 
 namespace RuneAggregateTree
 {
-    class MemoryRuneDatabase : RuneDatabase
+    class MemoryTokenDatabase : TokenDatabase
     {
-        //Memory
-        protected override Rune AddCore(Rune rune)
+        protected override Token AddCore(Token token)
         {
-            rune.ID = ++_nextId;
-            _items.Add(Clone(rune));
+            token.RTID = ++_nextId;
+            _items.Add(Clone(token));
 
-            return rune;
-        }
-
-        private Rune Clone(Rune rune)
-        {
-            var newRune = new Rune();
-            Clone(newRune, rune);
-
-            return newRune;
-        }
-
-        private void Clone(Rune target, Rune source)
-        {
-            target.ID = source.ID;
-            target.RType = source.RType;
-            target.Description = source.Description;
-            target.Price = source.Price;
-            target.Name = source.Name;
+            return token;
         }
 
         protected override void DeleteCore(int id)
@@ -42,41 +23,54 @@ namespace RuneAggregateTree
                 _items.RemoveAt(index);
         }
 
-        protected override Rune GetCore(int id)
-        {
-            
-            var index = GetIndex(id);
-            var rtm = Clone(_items[index]);
-            if (index >= 0)
-                return rtm;
-
-            return rtm;
-        }
-
-        protected override IEnumerable<Rune> GetAllCore()
+        protected override IEnumerable<Token> GetAllCore()
         {
             return _items.Select(Clone);
         }
 
-        protected override Rune UpdateCore(int id, Rune newRune)
+        protected override Token GetCore(int id)
+        {
+            var index = GetIndex(id);
+            if (index >= 0)
+                return Clone(_items[index]);
+
+            return null;
+        }
+
+        protected override Token UpdateCore(int id, Token newToken)
         {
             var index = GetIndex(id);
 
-            newRune.ID = id;
+            newToken.RTID = id;
             var existing = _items[index];
-            Clone(existing, newRune);
-                return newRune;
+            Clone(existing, newToken);
+
+            return newToken;
         }
 
-        //list for runes
+        private Token Clone(Token token)
+        {
+            var newToken = new Token();
+            Clone(newToken, token);
+
+            return newToken;
+        }
+
+        private void Clone(Token target, Token source)
+        {
+            target.RTID = source.RTID;
+            target.Name = source.Name;
+            target.description = source.description;
+            target.priceh = source.priceh;
+        }
 
         private int GetIndex(int id)
         {
             #region Comments
 
             //Capturing parameters/locals needs to be done using a temp type - compiler will generate this code            
-            //var tempType = new IsIdType() { Id = id }; 
-
+            //var tempType = new IsIdType() { Id = id };
+            //var game = _items.Where(tempType.IsId).FirstOrDefault();
 
             //Can use lambda anywhere you need a function object, must be explicit on type
             //Func<Game, bool> isId = (g) => g.Id == id;
@@ -92,15 +86,15 @@ namespace RuneAggregateTree
             //_items = all games
             // .Where = filters down to only those matching IsId
             // .FirstOrDefault = returns first of filtered items, if any
-            var rune = _items.Where(g => g.ID == id).FirstOrDefault();
+            var token = _items.Where(g => g.RTID == id).FirstOrDefault();
 
             //Demoing anonymous type
             //var games = from g in _items
             //            where g.Id == id
             //            select new { Id = g.Id, Name = g.Name };            
             //var game = games.FirstOrDefault();            
-            if (rune.Name != null && rune.RType != null)
-                return _items.IndexOf(rune);
+            if (token != null)
+                return _items.IndexOf(token);
 
             //Forget this
             //for (var index = 0; index < _items.Count; ++index)
@@ -110,7 +104,7 @@ namespace RuneAggregateTree
             return -1;
         }
 
-        private readonly List<Rune> _items = new List<Rune>();
+        private readonly List<Token> _items = new List<Token>();
 
         private int _nextId = 0;
     }

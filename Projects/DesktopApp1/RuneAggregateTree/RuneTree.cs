@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RuneAggregateTree
 {
-    public abstract class RuneTree : IRuneDatabase
+    public abstract class RuneTree : IValidatableObject
     {
 
         // the IRuneDatabase looks for its type names then its id
@@ -101,6 +101,28 @@ namespace RuneAggregateTree
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            var items = new List<ValidationResult>();
+
+            //Name is required
+            //if (String.IsNullOrEmpty(Name))
+            //    items.Add(new ValidationResult("Name is required.", new[] { nameof(Name) }));
+
+
+            //if (Price < 1000)
+            //    items.Add(new ValidationResult("Price must be >= 0.", new[] { nameof(Price) }));
+
+            //if (Price < 0)
+            //    items.Add(new ValidationResult("Price must be >= 0.", new[] { nameof(Price) }));
+
+            //if (Price > 1000)
+            //    items.Add(new ValidationResult("Price is too great", new[] { nameof(Price) }));
+
+            return items;
+        }
+
         ////validation
         //public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         //{
@@ -157,6 +179,7 @@ namespace RuneAggregateTree
 
         }
 
+        
         #region
 
         #endregion
