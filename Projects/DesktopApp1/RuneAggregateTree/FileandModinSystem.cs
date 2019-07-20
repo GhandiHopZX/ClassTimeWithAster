@@ -80,6 +80,17 @@ namespace RuneAggregateTree
 
             string path4 = @"F:\RyuuseiEngine\Mods\EssenoxRuneNames.txt";
 
+
+            // THis is for Volmir
+            string path5 = @"F:\RyuuseiEngine\Mods\VolmirRuneTypes.txt";
+
+            string path6 = @"F:\RyuuseiEngine\Mods\VolmirRuneNames.txt";
+
+            // THis is for Daevina
+            string path7 = @"F:\RyuuseiEngine\Mods\DaevinaRuneTypes.txt";
+
+            string path8 = @"F:\RyuuseiEngine\Mods\DaevinaRuneNames.txt";
+
             //// the rune types
             //Importfunction(path);
 
