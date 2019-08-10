@@ -140,32 +140,12 @@ namespace RuneAggregateTree
                 Taygr.Add(m);
                 GetTokens.Add(_tokend);
             }
-            
+
+            //to db
+            Taygr1.CopyTo(TaygrC);
 
             return Taygr; // Return the strings here to the "RuneTree" Aggregate
         }
-
-        //to db
-        public Token[] TokenToDB()
-        {
-            object ticket;
-            
-            int i;
-            int y = 0;
-            string[] maoi;
-
-            Taygr1.CopyTo(TaygrC);/*FInd a solution to this <<<<<<<<<<<<<<*/
-
-            //for (i = 0; y < GetTokens.Count; i++, y++)
-            //{
-                
-            //}
-
-            Sql.SqlRuneDatabase sqlRuneDatabase;
-            return null;
-        }
-
-        //private SqlRuneDatabase sqlruneDatabase;
 
     }
 }

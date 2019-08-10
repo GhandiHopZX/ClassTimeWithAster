@@ -145,7 +145,7 @@ namespace RuneAggregateTree
         //dead = true
         //or
         //alive = false
-        private int mana = 1000000;
+        private ulong mana = 10000000000000000000;
         private int Manaintake = 0;
         //private HashSet<Rune> taygrIn;
 
