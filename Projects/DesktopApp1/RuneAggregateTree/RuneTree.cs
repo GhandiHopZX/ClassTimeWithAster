@@ -32,9 +32,9 @@ namespace RuneAggregateTree
             private string _name;
             private string description;
 
+            [Range(0, Double.MaxValue, ErrorMessage = "Price must be >= 0.")]
             public decimal Price { get; set; }
 
-            [Range(0, Double.MaxValue, ErrorMessage = "Price must be >= 0.")]
             public string Description
             {
                 get => description ?? "";
