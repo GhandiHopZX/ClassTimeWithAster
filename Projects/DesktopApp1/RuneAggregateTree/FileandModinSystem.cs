@@ -37,7 +37,6 @@ namespace RuneAggregateTree
         
         // reference Taygr hash here
         
-
         // try passing the above hash to a database or better yet a tokenization
         // then send those tokens to a binding source
         // and just use the RuneTree to add categorization and description to
@@ -135,7 +134,6 @@ namespace RuneAggregateTree
                 Rune m = new Rune {RType = newTName[a], ID = NewRId[a], Description = Desc[a], Price = Pee[a], Name = newRName[a]};
 
                 Token _tokend = new Token(StrN.Name, StrN.RType, StrN.ID, StrN.Price, StrN.Description);
-
                 
                 Taygr.Add(m);
                 GetTokens.Add(_tokend);
