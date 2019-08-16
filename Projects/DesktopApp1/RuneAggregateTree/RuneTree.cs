@@ -72,7 +72,7 @@ namespace RuneAggregateTree
 
         private Rune[] taygrC;
 
-        private void TaygrBranch()
+        private void TaygrBranch(Rune[] Trunes)
         {
 
         }

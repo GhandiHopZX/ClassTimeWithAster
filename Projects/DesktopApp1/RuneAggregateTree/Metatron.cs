@@ -46,6 +46,8 @@ namespace RuneAggregateTree
             everything. 
             */
 
+
+
             Rune Taygr;
             throw new NotImplementedException();
         }
