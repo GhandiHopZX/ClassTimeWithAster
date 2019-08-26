@@ -23,7 +23,7 @@ namespace RuneAggregateTree
             // hierarchy of the Rclass on the Metatron.
 
             // There are four types of Hierarchal superior power that can be obtained 
-            // Called the Tetrahedron
+            // Called the Tetrahedron Heirarchy
             // they are: 
 
             /*
@@ -46,7 +46,7 @@ namespace RuneAggregateTree
             everything. 
             */
 
-
+            // Each shape/core of the metatron will have its own class governing how the spells will behave.
 
             Rune Taygr;
             throw new NotImplementedException();

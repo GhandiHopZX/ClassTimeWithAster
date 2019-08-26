@@ -47,7 +47,8 @@
     <Compile Include="ITokenDatabase.cs" />
     <Compile Include="MemoryRuneDatabase.cs" />
     <Compile Include="MemoryTokenDatabase.cs" />
-    <Compile Include="Metatron.cs" />
+    <Compile Include="Metatron\Metatron.cs" />
+    <Compile Include="Metatron\Tetrahedron.cs" />
     <Compile Include="ObjectValidator.cs" />
     <Compile Include="RuneDatabase.cs" />
     <Compile Include="RuneTree.cs" />
@@ -56,5 +57,6 @@
     <Compile Include="TokenDatabase.cs" />
     <Compile Include="TokenSystem.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
