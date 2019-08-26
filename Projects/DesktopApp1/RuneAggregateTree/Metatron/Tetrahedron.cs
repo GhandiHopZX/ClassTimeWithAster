@@ -13,6 +13,6 @@ namespace RuneAggregateTree.Metatron
          * For the Shape of the spell or magic type.
          */
 
-
+        
     }
 }
