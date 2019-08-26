@@ -57,9 +57,13 @@ namespace RuneAggregateTree
 
         public Token SetR { get; set; }
 
+        // Creation 
         public HashSet<Rune> Daevina1 { get => Daevina; set => Daevina = value; }
+        // Essense
         public HashSet<Rune> Essenox1 { get => Essenox; set => Essenox = value; }
+        // Projectile
         public HashSet<Rune> Volmir1 { get => Volmir; set => Volmir = value; }
+        // Ability
         public HashSet<Rune> Taygr1 { get => Taygr; set => Taygr = value; }
 
         public HashSet<Rune> TaygrRuneImport()
@@ -128,6 +132,7 @@ namespace RuneAggregateTree
                 StrN.Price = Pee[a];
                 StrN.Description = Desc[a];
                 StrN.Name = newRName[a];
+
                 // name
                 //TokenSystem.Names = RN[a];
 
