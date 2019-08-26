@@ -8,6 +8,11 @@ namespace RuneAggregateTree.Metatron
 {
     class Tetrahedron
     {
+        /*
+         * Procedurally generated Polygon Tetras.
+         * For the Shape of the spell or magic type.
+         */
+
 
     }
 }
